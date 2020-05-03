@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from craigslist import CraigslistCommunity
 from dateutil.parser import parse
 from util import post_listing_to_slack, find_points_of_interest
-from slackclient import SlackClient
+from slackbot.slackclient import SlackClient
 import time
 import settings
 
