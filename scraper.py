@@ -40,7 +40,7 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-def scrape_area():
+def scrape_area(location,area,cate):
     """
     Scrapes craigslist for a certain geographic area, and finds the latest listings.
     :param area:
@@ -48,7 +48,7 @@ def scrape_area():
     """
     #cl_h = CraigslistHousing(site=settings.CRAIGSLIST_SITE, area=area, category=settings.CRAIGSLIST_HOUSING_SECTION,
     #                         filters={'max_price': settings.MAX_PRICE, "min_price": settings.MIN_PRICE})
-    cl_h = CraigslistCommunity(site=settings.CRAIGSLIST_SITE,category=settings.CRAIGSLIST_HOUSING_SECTION)
+    cl_h = CraigslistCommunity(site=area,category=cate)
     results = []
     gen = cl_h.get_results(sort_by='newest', geotagged=True)
     while True:
@@ -62,9 +62,9 @@ def scrape_area():
 
         # Don't store the listing if it already exists.
         if listing is None:
-            if result["where"] is None:
+            #if result["where"] is None:
                 # If there is no string identifying which neighborhood the result is from, skip it.
-                result["where"] = 'none'
+            result["where"] = location
                 #continue
 
             lat = 0
@@ -112,7 +112,8 @@ def do_scrape():
     sc = SlackClient(settings.SLACK_TOKEN)
 
     # Get all the results from craigslist.
-    all_results = scrape_area()
+    all_results = scrape_area('Bay Area',settings.CRAIGSLIST_SITE1,settings.CRAIGSLIST_SEARCH1)
+    all_results += scrape_area('San Diego',settings.CRAIGSLIST_SITE2,settings.CRAIGSLIST_SEARCH2)
     print(len(all_results))
 
     print("{}: Got {} results".format(time.ctime(), len(all_results)))

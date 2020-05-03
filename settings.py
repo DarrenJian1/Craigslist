@@ -13,7 +13,9 @@ MAX_PRICE = 2000
 # The Craigslist site you want to search on.
 # For instance, https://sfbay.craigslist.org is SF and the Bay Area.
 # You only need the beginning of the URL.
-CRAIGSLIST_SITE = 'sfbay'
+CRAIGSLIST_SITE1 = 'sfbay'
+CRAIGSLIST_SITE2 = 'sandiego'
+
 
 # What Craigslist subdirectories to search on.
 # For instance, https://sfbay.craigslist.org/eby/ is the East Bay, and https://sfbay.craigslist.org/sfc/ is San Francisco.
@@ -98,7 +100,8 @@ TRANSIT_STATIONS = {
 # For instance, https://sfbay.craigslist.org/search/apa find apartments for rent.
 # https://sfbay.craigslist.org/search/sub finds sublets.
 # You only need the last 3 letters of the URLs.
-CRAIGSLIST_HOUSING_SECTION = 'pet?query=hognose&search_distance=100&postal=94579'
+CRAIGSLIST_SEARCH1 = 'pet?query=hognose&search_distance=100&postal=94579'
+CRAIGSLIST_SEARCH2 = 'pet?query=hognose&search_distance=100&postal=92121'
 
 ## System settings
 
