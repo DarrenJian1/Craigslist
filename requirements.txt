@@ -1,4 +1,4 @@
-python-craigslist>=1.0.3
+python-craigslist
 sqlalchemy
 python-dateutil
 ipython
