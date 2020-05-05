@@ -1,2 +1,2 @@
-web: python server.py
 worker: python main_loop.py
+web: python server.py
