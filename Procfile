@@ -1,1 +1,1 @@
-worker: python main_loop.py
+worker: python Scripts/main_loop.py
