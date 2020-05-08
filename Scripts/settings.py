@@ -108,7 +108,7 @@ CRAIGSLIST_SEARCH2 = 'pet?query=hognose&search_distance=100&postal=92121'
 # How long we should sleep between scrapes of Craigslist.
 # Too fast may get rate limited.
 # Too slow may miss listings.
-SLEEP_INTERVAL = 20 * 60 # 20 minutes
+SLEEP_INTERVAL = 60 * 60 # 20 minutes
 
 # Which slack channel to post the listings into.
 SLACK_CHANNEL = "#hognose"
